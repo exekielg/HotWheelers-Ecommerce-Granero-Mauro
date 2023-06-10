@@ -61,7 +61,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
             cancelButtonText: 'Seguir comprando'
           }).then((result) => {
             if (result.value) {
-              verCarrito
+              drawCarrito();  // deriva al modal del carrito
             }
           });
         }

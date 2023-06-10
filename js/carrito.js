@@ -59,13 +59,26 @@ const drawCarrito = () => {
   
      
     });
-  
+    
+    // Mostrar el Total
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
   
     const totalCompra = document.createElement("div");
     totalCompra.className = "total-content";
-    totalCompra.innerHTML = `Total a pagar: ${total} $`;
+    totalCompra.innerHTML = `Total a pagar: $ ${total} `;
     modalContainer.append(totalCompra);
+
+    // Boton de Finalizar compra
+    const finalizarCompraBtn = document.createElement("button");
+    finalizarCompraBtn.innerText = "Finalizar compra";
+    finalizarCompraBtn.className = "finalizar-compra";
+
+    const botonContainer = document.createElement("div");
+    botonContainer.className = "boton-fincompra";
+    botonContainer.appendChild(finalizarCompraBtn);
+
+    modalContainer.appendChild(botonContainer);
+
   };
   
   verCarrito.addEventListener("click", drawCarrito);
